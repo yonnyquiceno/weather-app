@@ -1,0 +1,29 @@
+.weatherDataContainer {
+  background-color: rgba(220, 220, 220, 0.513);
+  width: 60%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 12px
+}
+
+.weatherExtraInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.weatherExtraInfoContainer span {
+  padding: 20px
+}
+
+.weatherTemperatureContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0f98e7d0
+}
