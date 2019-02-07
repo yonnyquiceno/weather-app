@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import './styles.css'
 import Location from './Location';
 import WeatherData from './WeatherData'
-import {SNOW} from '../../constants/weathers';
 import {api_weather} from '../../constants/weatherApi';
 import transformWeather from './../../services/transformWeather'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class WeatherLocation extends Component {
 
   constructor() {
     super();
     this.state = {
-      city: 'Buenos Aires',
+      city: null,
       country_code: null,
       data: null
     };
@@ -47,7 +48,10 @@ class WeatherLocation extends Component {
             <Location city={city} country_code={country_code} weatherState={data.weatherState}/>
             <WeatherData data={data}/>
           </span> :
-          <div> loading ... </div>
+          <span>
+            <div className="spacer-mid"></div>
+            <CircularProgress size={50}/>
+          </span>
         }
       </div>
     )
