@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import WeatherIcons from 'react-weathericons';
-import {SUNNY} from '../../constants/weathers';
+import {SUN, CLOUDY, RAIN, SNOW, THUNDER, DRIZZLE} from '../../constants/weathers';
+
+const icons = {
+  [SUN]: "day-sunny",
+  [CLOUDY]: "cloudy",
+  [RAIN]: "rain",
+  [SNOW]: "snow",
+  [THUNDER]: "day-thunderstone",
+  [DRIZZLE]: "day-showers"
+}
 
 const getWeatherIcon = (weatherState) => {
   if (weatherState)
-    return <WeatherIcons name={weatherState}/>
+    return <WeatherIcons name={icons[weatherState]}/>
   else
-    return <WeatherIcons name={SUNNY}/>
+    return <WeatherIcons name={SUN}/>
 };
 
 const Location = ({ city, country_code, weatherState }) => {
